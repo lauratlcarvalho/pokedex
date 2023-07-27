@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-function PokemonCard({name, imgSrc}) {
-
+function PokemonCard(pokemon) {
+const{name, imgSrc} = pokemon
  return (
         <figure>
             {imgSrc? <img src={imgSrc} alt={`Image of pokemon ${name}`}/> : "???"}
