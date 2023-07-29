@@ -1,25 +1,16 @@
 import PropTypes from 'prop-types'
 
-function NavBar({pokemonIndex, setPokemonIndex, pokemonList}) {
+function NavBar({setPokemonIndex, pokemonList}) {
 
    
-    const nextButton = () => {
-      if (pokemonIndex < pokemonList.length - 1) {
-        setPokemonIndex(pokemonIndex + 1);
-      }
-    };
-    const previousButton = () => {
-      if (pokemonIndex > 0) {
-        setPokemonIndex(pokemonIndex - 1);
-      }
+    const handleButtonClick = (pokemonList) => {
+        setPokemonIndex(pokemonList);
     };
     return (
-      <>
-        <div>
-         
-          <button onClick={previousButton}>Previous</button>
-          <button onClick={nextButton}>Next</button>
-        </div>
+        <>
+        {pokemonList.map((pokemon,pokemonList)=> (
+                <button onClick={()=> handleButtonClick(pokemonList)} key={pokemon.name}>{pokemon.name}</button>
+            ))}
       </>
     );
   }
