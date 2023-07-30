@@ -6,11 +6,21 @@ function NavBar({pokemonIndex, setPokemonIndex, pokemonList}) {
     const nextButton = () => {
       if (pokemonIndex < pokemonList.length - 1) {
         setPokemonIndex(pokemonIndex + 1);
+        if(pokemonIndex == 2){
+          setTimeout(()=>{
+               alert('pika pikachu!!!')
+          },100)
+     }
       }
     };
     const previousButton = () => {
       if (pokemonIndex > 0) {
         setPokemonIndex(pokemonIndex - 1);
+      if(pokemonIndex == 4){
+          setTimeout(()=>{
+               alert('pika pikachu!!!')
+          },100)
+      }
       }
     };
     return (
